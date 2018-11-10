@@ -18,6 +18,8 @@ You need to have an active account at https://netacad.com.
 ```
 mkdir ~/.cpt72
 
+xhost +local:
+
 docker run -it \
   -v /tmp/.X11-unix/:/tmp/.X11-unix \
   -v /dev/shm:/dev/shm \
