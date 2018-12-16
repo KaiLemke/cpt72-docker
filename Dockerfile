@@ -5,7 +5,7 @@ RUN echo 'deb http://ftp.us.debian.org/debian jessie main' > /etc/apt/sources.li
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libqt5webkit5 libqt5multimedia5 libqt5xml5 libqt5script5 \
     libqt5scripttools5 libpng12-0 libicu52 libqt5sensors5 libqt5positioning5 \
-    libssl1.0.0 ca-certificates
+    libssl1.0.0 ca-certificates firefox-esr icedtea-plugin
 
 COPY pt.tar.gz pt.tar.gz
 
@@ -28,4 +28,4 @@ ENV QT_DEVICE_PIXEL_RATIO auto
 ENV LD_LIBRARY_PATH /opt/pt/bin
 ENV LD_PRELOAD /opt/pt/bin/libQt5WebKit.so.5
 
-CMD /opt/pt/bin/PacketTracer7
+CMD /opt/pt/bin/PacketTracer7 & firefox https://netacad.com
